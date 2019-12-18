@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Northwind.Web.MVC.Components.BreadcrumbsNavigation.BreadcrumbsNavigationEntry>
+@{
+    Layout = null;
+}
+
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        @foreach(var entry in Model)
+        {
+            <li class="breadcrumb-item"><a href="@entry.NavigationPathPartLink">@entry.NavigationPathPartName</a></li>
+        }
+    </ol>
+</nav>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Northwind.BusinessLogicServices.Interfaces.Models.Categories.CategoryList>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Headers{
+    @await Component.InvokeAsync("BreadcrumbsNavigation");
+}
+<h1 class="mb-lg-5">Available categories</h1>
+<div class="row">
+    <div class="col-4">
+        <h3>@Html.DisplayNameFor(model => model.CategoryName)</h3>
+        <div class="list-group pt-lg-3" id="list-tab" role="tablist">
+            @foreach (var category in Model)
+            {
+                <a class="list-group-item list-group-item-action " id="@category.CategoryId.ToString()" data-toggle="list" href="#description-@category.CategoryId.ToString()" role="tab" aria-controls="home">@Html.DisplayFor(modelItem => category.CategoryName)</a>
+            }
+        </div>
+    </div>
+    <div class="col-8">
+        <h3>@Html.DisplayNameFor(model => model.Description)</h3>
+        <div class="tab-content pt-lg-3" id="nav-tabContent">
+            @foreach (var category in Model)
+            {
+            <div class="tab-pane fade" id="description-@category.CategoryId.ToString()" role="tabpanel" aria-labelledby="@category.CategoryId.ToString()">
+                <p>@Html.DisplayFor(modelItem => category.Description)</p>
+                @*@Html.NorthwindImageLink(category.CategoryId, "Get image")*@
+                <a class="text-muted" northwind-id="@category.CategoryId">Get image</a>
+                <a class="text-warning" asp-controller="Categories" asp-action="Edit" asp-route-categoryId="@category.CategoryId">Edit</a>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Footers
+{ 
+<p class="text-capitalize text-danger ml-lg-5">User can't edit categories!</p>
+}
