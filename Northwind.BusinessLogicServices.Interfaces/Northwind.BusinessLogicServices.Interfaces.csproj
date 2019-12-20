@@ -12,6 +12,9 @@
     <Reference Include="Microsoft.Extensions.Caching.Abstractions">
       <HintPath>..\..\..\..\Users\Artsiom_Lyshchyk\.nuget\packages\microsoft.extensions.caching.abstractions\3.0.0\lib\netcoreapp3.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Identity.Stores">
+      <HintPath>..\..\..\..\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\3.0.0\ref\netcoreapp3.0\Microsoft.Extensions.Identity.Stores.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

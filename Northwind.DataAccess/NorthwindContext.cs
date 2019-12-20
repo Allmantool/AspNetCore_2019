@@ -1,11 +1,12 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Northwind.DataAccess.Interfaces.Models;
 
 namespace Northwind.DataAccess
 {
-    public partial class NorthwindContext : DbContext
+    public partial class NorthwindContext : IdentityDbContext<User>
     {
         public NorthwindContext()
         {
@@ -52,6 +53,7 @@ namespace Northwind.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder.Entity<Categories>(entity =>
             {
                 entity.HasKey(e => e.CategoryId);
@@ -470,9 +472,10 @@ namespace Northwind.DataAccess
                     .HasConstraintName("FK_Territories_Region");
             });
 
-            OnModelCreatingPartial(modelBuilder);
+            base.OnModelCreating(modelBuilder);
+
         }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

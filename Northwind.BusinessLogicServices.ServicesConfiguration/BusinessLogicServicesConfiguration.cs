@@ -17,6 +17,8 @@ namespace Northwind.BusinessLogicServices.ServicesConfiguration
             services.AddTransient<IProductsService, ProductsService>();
             services.AddTransient<ICategoriesService, CategoriesService>();
             services.AddTransient<ISuppliersService, SuppliersService>();
+
+            services.AddSingleton<IEmailService, EmailService>();
         }
     }
 }

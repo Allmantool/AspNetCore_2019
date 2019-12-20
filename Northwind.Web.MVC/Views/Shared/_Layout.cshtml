@@ -23,11 +23,29 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a asp-controller="Users" asp-action="Login" class="nav-link">Sign In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Users" asp-action="Register" class="nav-link">Sign Up</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a asp-controller="Users" asp-action="Logout" class="nav-link">Logout</a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a asp-controller="Products" asp-action="Index" class="nav-link">Products</a>
                         </li>
                         <li class="nav-item">
                             <a asp-controller="Categories" asp-action="Index" class="nav-link">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Administrator" asp-action="Index" class="nav-link">Users</a>
                         </li>
                     </ul>
                 </div>

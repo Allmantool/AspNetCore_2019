@@ -1,0 +1,33 @@
+﻿@model Northwind.Web.MVC.Models.Users.RegisterViewModel
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "_Layout";
+}
+<h2>Registration</h2>
+<div class="row mt-lg-5">
+    <div class="col-lg-4">
+        <form method="post" asp-controller="Users" asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email"></label><br/>
+                <input asp-for="Email" class="form-control"/>
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label><br/>
+                <input asp-for="Password" class="form-control"/>
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PasswordConfirm"></label><br/>
+                <input asp-for="PasswordConfirm" class="form-control"/>
+                <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+            </div>
+            <div>
+                <input type="submit" class="btn btn-success" value="Sing Up"/>
+            </div>
+        </form>
+    </div>  
+</div>
+

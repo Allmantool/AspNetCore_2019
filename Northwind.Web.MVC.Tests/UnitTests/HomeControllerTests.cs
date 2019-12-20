@@ -35,14 +35,6 @@ namespace Northwind.Web.MVC.Tests.UnitTests
         }
 
         [Fact]
-        public void PrivacyGet_ReturnsView_WhenDefaultRequest()
-        {
-            var result = _homeController.Privacy();
-
-            var viewResult = Assert.IsType<ViewResult>(result);
-        }
-
-        [Fact]
         public void ErrorGet_ReturnsView_WhenNoExceptionThrown()
         {
             _mockLogger.Setup(l => l.LogError(It.IsAny<string>()));
@@ -51,21 +43,5 @@ namespace Northwind.Web.MVC.Tests.UnitTests
 
             var viewResult = Assert.IsType<ViewResult>(result);
         }
-
-        //[Fact]
-        //public void ErrorGet_ReturnsViewWithCorrectNotNullModel_WhenExceptionWasThrown()
-        //{
-        //    var mockExHandlerFeature = new Mock<IExceptionHandlerFeature>();
-
-        //    _mockLogger.Setup(l => l.LogError(It.IsAny<string>()));
-        //    mockExHandlerFeature.Setup(ehf => ehf.Error).Returns(new Exception(It.IsAny<string>()));
-
-        //    var result = _homeController.Error();
-
-        //    var viewResult = Assert.IsType<ViewResult>(result);
-        //    var errorViewModel = Assert.IsType<ErrorViewModel>(viewResult.Model);
-
-        //    Assert.NotNull(viewResult.Model);
-        //}
     }
 }

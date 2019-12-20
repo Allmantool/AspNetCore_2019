@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="MailKit" Version="2.4.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,6 +17,9 @@
   <ItemGroup>
     <Reference Include="Microsoft.AspNetCore.Mvc.Core">
       <HintPath>..\..\..\..\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\3.0.0\ref\netcoreapp3.0\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\..\..\..\Users\Artsiom_Lyshchyk\.nuget\packages\mimekit\2.4.1\lib\netstandard2.0\MimeKit.dll</HintPath>
     </Reference>
   </ItemGroup>
 

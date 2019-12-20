@@ -1,0 +1,38 @@
+﻿@model Northwind.Web.MVC.Models.Users.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout";
+}
+
+@section Headers{
+    @await Component.InvokeAsync("BreadcrumbsNavigation");
+}
+<h1>Sign In</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-controller="Users" asp-action="Login"
+              asp-route-returnUrl="@Model.ReturnUrl">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="col-form-label"></label>
+                <input asp-for="Email" class="form-control"/>
+                <span class="text-danger" asp-validation-for="Email"></span>
+            </div>
+            <div class="form-group">
+
+                <label asp-for="Password" class="col-form-label"></label>
+                <input asp-for="Password" class="form-control"/>
+                <span class="text-danger" asp-validation-for="Password"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="RememberMe" type="checkbox"  class="form-check-input"/>
+                <label class="form-check-label">Remember?</label>
+            </div>
+            <div>
+                <input type="submit" class="btn btn-outline-primary" value="Sign In"/>
+            </div>
+        </form>
+        <a asp-controller="Users" asp-action="ForgotPassword" class="alert-link">Forgot password?</a>
+    </div>
+</div>

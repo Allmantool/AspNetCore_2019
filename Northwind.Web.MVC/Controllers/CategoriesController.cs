@@ -10,6 +10,8 @@ using Northwind.Web.MVC.Utilities;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using Microsoft.AspNetCore.Authentication.AzureAD.UI;
+using Microsoft.AspNetCore.Authorization;
 using Northwind.Common.Extensions;
 using Northwind.Web.MVC.Filters.ActionFilters;
 using Northwind.Web.MVC.Models.Categories;
@@ -19,6 +21,7 @@ using Northwind.Web.MVC.Utilities.Logging.LoggerAdapter;
 
 namespace Northwind.Web.MVC.Controllers
 {
+    [Authorize(AuthenticationSchemes = AzureADDefaults.AuthenticationScheme)]
     public class CategoriesController : Controller
     {
         private readonly ICategoriesService _categoriesService;

@@ -5,6 +5,7 @@ using Northwind.DataAccess.Interfaces.Context;
 using Northwind.DataAccess;
 using System;
 using Northwind.DataAccess.Context;
+using Northwind.DataAccess.Interfaces.Models;
 
 namespace Northwind.DataAccess.ServicesConfiguration
 {

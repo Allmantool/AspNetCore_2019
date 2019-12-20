@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Northwind.DataAccess.Interfaces.Models;
 
 namespace Northwind.DataAccess.Context
 {
     public abstract class AppDomainContextBase<TDbContext>
-     where TDbContext : DbContext
+     where TDbContext : IdentityDbContext<User>
     {
         private readonly TDbContext _dbContext;
 

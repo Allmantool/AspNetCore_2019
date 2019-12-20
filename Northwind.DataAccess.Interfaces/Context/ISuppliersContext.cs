@@ -7,6 +7,6 @@ namespace Northwind.DataAccess.Interfaces.Context
 {
     public interface ISuppliersContext : IEntityStorage
     {
-        public IEntitySet<Suppliers> Suppliers { get; }
+       IEntitySet<Suppliers> Suppliers { get; }
     }
 }
